@@ -5,9 +5,12 @@ import express from "express";
 import cors from "cors";
 const app = express();
 
-// Import the routes
+// Imports
+import errorHandler from "../interfaces/middlewares/errorHandler.js";
+import authRoutes from "./routes/AuthRoutes.js";
 
 // Middlewares
+app.use(errorHandler);
 
 // Enable CORS for all requests
 app.use(
@@ -20,6 +23,7 @@ app.use(
 app.use(express.json());
 
 // Endpoints
+app.use("/api/v1/auth/", authRoutes);
 
 const PORT = 8000;
 app.listen(PORT, () => {
