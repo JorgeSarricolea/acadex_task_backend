@@ -14,7 +14,9 @@ const loginUser = new LoginUser(userRepository);
 
 const authController = new AuthController(signupUser, loginUser);
 
-router.post("/signup", (req, res) => authController.signup(req, res));
-router.post("/login", (req, res) => authController.login(req, res));
+router.post("/signup", (req, res, next) =>
+  authController.signup(req, res, next)
+);
+router.post("/login", (req, res, next) => authController.login(req, res, next));
 
 export default router;

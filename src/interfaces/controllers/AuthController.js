@@ -4,7 +4,7 @@ export default class AuthController {
     this.loginUserUseCase = loginUserUseCase;
   }
 
-  async signup(req, res) {
+  async signup(req, res, next) {
     try {
       const { firstName, lastName, email, password } = req.body;
       const user = await this.signupUserUseCase.execute({
@@ -15,17 +15,17 @@ export default class AuthController {
       });
       res.status(201).json(user);
     } catch (error) {
-      res.status(400).json({ error: error.message });
+      next(error);
     }
   }
 
-  async login(req, res) {
+  async login(req, res, next) {
     try {
       const { email, password } = req.body;
       const result = await this.loginUserUseCase.execute({ email, password });
       res.status(200).json(result);
     } catch (error) {
-      res.status(401).json({ error: error.message });
+      next(error);
     }
   }
 }
