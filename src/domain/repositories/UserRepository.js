@@ -1,4 +1,4 @@
-import { ErrorFactory } from "../errors/ErrorFactory.js";
+import { ErrorFactory } from "../../application/services/ErrorFactory.js";
 
 export default class UserRepository {
   async createUser(userData) {
