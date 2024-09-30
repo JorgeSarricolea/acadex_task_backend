@@ -1,5 +1,5 @@
 import { comparePasswords, generateToken } from "../../services/authService.js";
-import { ErrorFactory } from "../../../domain/errors/ErrorFactory.js";
+import { ErrorFactory } from "../../services/ErrorFactory.js";
 import { UserPresenter } from "../../../interfaces/presenters/UserPresenter.js";
 
 export class LoginUser {
