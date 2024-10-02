@@ -6,14 +6,19 @@ import { SignupUser } from "../../application/use-cases/auth/SignupUser.js";
 import { LoginUser } from "../../application/use-cases/auth/LoginUser.js";
 
 const router = express.Router();
-
 const userRepository = new UserRepositoryImpl(prisma);
 
+// Use cases
 const signupUser = new SignupUser(userRepository);
 const loginUser = new LoginUser(userRepository);
 
-const authController = new AuthController(signupUser, loginUser);
+// Controllers
+const authController = new AuthController({
+  signupUserUseCase: signupUser,
+  loginUserUseCase: loginUser,
+});
 
+// Routes
 router.post("/signup", (req, res, next) =>
   authController.signup(req, res, next)
 );
