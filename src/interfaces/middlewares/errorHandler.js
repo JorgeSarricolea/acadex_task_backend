@@ -9,7 +9,6 @@ import { AppError } from "../../domain/errors/AppError.js";
  */
 export default function errorHandler(err, req, res, next) {
   if (err instanceof AppError) {
-
     // Operational, trusted error: send a clean response to the client
     const response = {
       error: err.message,
