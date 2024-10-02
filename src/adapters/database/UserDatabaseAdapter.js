@@ -25,4 +25,8 @@ export class UserDatabaseAdapter {
       where: { id: userId },
     });
   }
+
+  async getAllUsers() {
+    return await prisma.user.findMany();
+  }
 }
