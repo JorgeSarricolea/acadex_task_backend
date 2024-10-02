@@ -48,3 +48,12 @@ export class NotImplementedError extends AppError {
     });
   }
 }
+
+export class DatabaseError extends AppError {
+  constructor(details = null) {
+    super({
+      ...ERROR_CODES.DATABASE_ERRORS.DATABASE_ERROR,
+      details,
+    });
+  }
+}

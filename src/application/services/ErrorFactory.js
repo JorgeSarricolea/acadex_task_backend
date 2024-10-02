@@ -13,6 +13,7 @@ const errorMap = {
   NotFound: (params) => new NotFoundError(params?.resource, params?.details),
   NotImplemented: (params) =>
     new NotImplementedError(params?.methodName, params?.details),
+  DatabaseError: (params) => new Error(params?.details),
 };
 
 export class ErrorFactory {

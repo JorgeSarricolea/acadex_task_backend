@@ -25,6 +25,13 @@ export const ERROR_CODES = {
       code: "BAD_REQUEST",
     },
   },
+  DATABASE_ERRORS: {
+    DATABASE_ERROR: {
+      message: "A database error occurred",
+      statusCode: 500, // 500 Internal Server Error
+      code: "DATABASE_ERROR",
+    },
+  },
   GENERAL_ERRORS: {
     NOT_IMPLEMENTED: {
       message: "Not implemented",
