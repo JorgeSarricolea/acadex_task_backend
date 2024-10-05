@@ -1,5 +1,5 @@
 export default class AuthController {
-  constructor(signupUserUseCase, loginUserUseCase) {
+  constructor({ signupUserUseCase, loginUserUseCase }) {
     this.signupUserUseCase = signupUserUseCase;
     this.loginUserUseCase = loginUserUseCase;
   }
