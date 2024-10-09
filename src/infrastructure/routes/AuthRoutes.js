@@ -23,5 +23,8 @@ router.post("/signup", (req, res, next) =>
   authController.signup(req, res, next)
 );
 router.post("/login", (req, res, next) => authController.login(req, res, next));
+router.post("/validate-token", (req, res, next) =>
+  authController.validateToken(req, res, next)
+);
 
 export default router;
