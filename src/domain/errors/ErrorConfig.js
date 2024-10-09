@@ -10,6 +10,11 @@ export const ERROR_CODES = {
       statusCode: 401, // 401 Unauthorized
       code: "INVALID_CREDENTIALS",
     },
+    UNAUTHORIZED: {
+      message: "Invalid or expired token",
+      statusCode: 401, // 401 Unauthorized
+      code: "INVALID_OR_EXPIRED_TOKEN",
+    },
   },
   RESOURCE_ERRORS: {
     NOT_FOUND: {

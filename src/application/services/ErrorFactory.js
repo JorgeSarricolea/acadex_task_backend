@@ -4,11 +4,13 @@ import {
   ValidationError,
   NotFoundError,
   NotImplementedError,
+  UnauthorizedError,
 } from "../../domain/errors/CustomErrors.js";
 
 const errorMap = {
   UserAlreadyExists: (params) => new UserAlreadyExistsError(params?.details),
   InvalidCredentials: (params) => new InvalidCredentialsError(params?.details),
+  Unauthorized: (params) => new UnauthorizedError(params?.details),
   Validation: (params) => new ValidationError(params?.message, params?.details),
   NotFound: (params) => new NotFoundError(params?.resource, params?.details),
   NotImplemented: (params) =>

@@ -19,6 +19,15 @@ export class InvalidCredentialsError extends AppError {
   }
 }
 
+export class UnauthorizedError extends AppError {
+  constructor(details = null) {
+    super({
+      ...ERROR_CODES.AUTH_ERRORS.UNAUTHORIZED,
+      details,
+    });
+  }
+}
+
 export class NotFoundError extends AppError {
   constructor(resource = "Resource", details = null) {
     super({
