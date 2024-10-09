@@ -1,4 +1,4 @@
-import { comparePasswords, generateToken } from "../../services/authService.js";
+import { comparePasswords, generateToken } from "../../services/AuthService.js";
 import { ErrorFactory } from "../../services/ErrorFactory.js";
 import { UserPresenter } from "../../../interfaces/presenters/UserPresenter.js";
 

@@ -1,4 +1,4 @@
-import { hashPassword } from "../../services/authService.js";
+import { hashPassword } from "../../services/AuthService.js";
 import { ErrorFactory } from "../../services/ErrorFactory.js";
 import { UserPresenter } from "../../../interfaces/presenters/UserPresenter.js";
 
