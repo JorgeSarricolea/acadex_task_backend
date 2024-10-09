@@ -13,3 +13,12 @@ export async function comparePasswords(password, hashedPassword) {
 export function generateToken(payload, secret, options = {}) {
   return jwt.sign(payload, secret, options);
 }
+
+export function validateToken(token, secret) {
+  try {
+    const decoded = jwt.verify(token, secret);
+    return decoded;
+  } catch (error) {
+    return null;
+  }
+}
