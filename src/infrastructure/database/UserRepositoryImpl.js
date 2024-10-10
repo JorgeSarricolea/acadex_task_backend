@@ -7,6 +7,10 @@ export default class UserRepositoryImpl extends UserRepository {
     this.userAdapter = new UserDatabaseAdapter();
   }
 
+  async getUserById(userId) {
+    return await this.userAdapter.getUserById(userId);
+  }
+
   async getAllUsers() {
     return await this.userAdapter.getAllUsers();
   }
