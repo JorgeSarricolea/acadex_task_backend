@@ -1,6 +1,12 @@
 import prisma from "../../infrastructure/database/prisma.js";
 
 export class UserDatabaseAdapter {
+  async getUserById(userId) {
+    return await prisma.user.findUnique({
+      where: { id: userId },
+    });
+  }
+
   async createUser(userData) {
     return await prisma.user.create({
       data: userData,
