@@ -1,6 +1,12 @@
 import { ErrorFactory } from "../../application/services/ErrorFactory.js";
 
 export default class UserRepository {
+  async getUserById(userId) {
+    throw ErrorFactory.createError("NotImplemented", {
+      methodName: "getUserById",
+    });
+  }
+
   async getAllUsers() {
     throw ErrorFactory.createError("NotImplemented", {
       methodName: "getAllUsers",
