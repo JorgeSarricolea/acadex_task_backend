@@ -22,7 +22,7 @@ export default class UserService {
   }
 
   async getUserById(userId) {
-    const user = await this.userRepository.getById(userId);
+    const user = await this.userRepository.getUserById(userId);
     if (!user) {
       throw ErrorFactory.createError("NotFound", {
         resource: "User",
