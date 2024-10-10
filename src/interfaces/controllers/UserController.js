@@ -1,10 +1,12 @@
 export default class UserController {
-  constructor({ getAllUsersUseCase, updateUserUseCase }) {
+  constructor({ getAllUsersUseCase, updateUserUseCase, getUserByIdUseCase }) {
     this.getAllUsersUseCase = getAllUsersUseCase;
     this.updateUserUseCase = updateUserUseCase;
+    this.getUserByIdUseCase = getUserByIdUseCase;
 
     this.getAll = this.getAll.bind(this);
     this.update = this.update.bind(this);
+    this.getById = this.getById.bind(this);
   }
 
   async getAll(req, res, next) {
@@ -25,6 +27,16 @@ export default class UserController {
         userData
       );
       res.status(200).json(updatedUser);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getById(req, res, next) {
+    try {
+      const userId = req.params.id;
+      const user = await this.getUserByIdUseCase.execute(userId);
+      res.status(200).json(user);
     } catch (error) {
       next(error);
     }
