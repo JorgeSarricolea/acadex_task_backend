@@ -9,6 +9,8 @@ const app = express();
 import errorHandler from "../interfaces/middlewares/errorHandler.js";
 import authRoutes from "./routes/AuthRoutes.js";
 import userRoutes from "./routes/UserRoutes.js";
+import homeworkRoutes from "./routes/HomeworkRoutes.js";
+import categoryRoutes from "./routes/CategoryRoutes.js";
 
 // Enable CORS for all requests
 app.use(
@@ -23,6 +25,8 @@ app.use(express.json());
 // Endpoints
 app.use("/api/v1/auth/", authRoutes);
 app.use("/api/v1/users/", userRoutes);
+app.use("/api/v1/homeworks/", homeworkRoutes);
+app.use("/api/v1/categories/", categoryRoutes);
 
 // Middlewares
 app.use(errorHandler);
