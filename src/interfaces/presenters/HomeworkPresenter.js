@@ -8,6 +8,7 @@ export class HomeworkPresenter {
       endDate: homework.endDate,
       userId: homework.userId,
       categoryId: homework.categoryId,
+      status: homework.status,
     };
   }
 }

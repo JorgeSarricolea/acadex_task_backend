@@ -7,6 +7,7 @@ export class Homework {
     description,
     startDate,
     endDate,
+    status,
   }) {
     this.id = id;
     this.userId = userId;
@@ -15,5 +16,6 @@ export class Homework {
     this.description = description;
     this.startDate = new Date(startDate);
     this.endDate = new Date(endDate);
+    this.status = status;
   }
 }
