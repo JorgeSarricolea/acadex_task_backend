@@ -12,6 +12,8 @@ import userRoutes from "./routes/UserRoutes.js";
 import homeworkRoutes from "./routes/HomeworkRoutes.js";
 import categoryRoutes from "./routes/CategoryRoutes.js";
 
+import { swaggerUi, swaggerDocs } from "./swagger.js";
+
 // Enable CORS for all requests
 app.use(
   cors({
@@ -27,6 +29,9 @@ app.use("/api/v1/auth/", authRoutes);
 app.use("/api/v1/users/", userRoutes);
 app.use("/api/v1/homeworks/", homeworkRoutes);
 app.use("/api/v1/categories/", categoryRoutes);
+
+// Docs
+app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Middlewares
 app.use(errorHandler);
