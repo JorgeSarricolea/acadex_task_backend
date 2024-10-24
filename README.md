@@ -32,7 +32,8 @@ Make sure to create a `.env` file in the root of your project with the following
    npm install
    ```
 
-> [!IMPORTANT] > **Node.js:** Ensure that you have Node.js installed on your system.
+> [!IMPORTANT]
+> **Node.js:** Ensure that you have Node.js installed on your system.
 
 3. **Start the server:**
    ```bash
